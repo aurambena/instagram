@@ -1,10 +1,23 @@
 {% extends 'general/layout.html' %}
+{% load crispy_forms_tags %}
 
 {% block head_title %}Welcome to our instagram {% endblock %}
 
 {% block page_content %}
 <div class="container">
     <h1>Register page</h1>
-    <p>This is the register content</p>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-12 col-sm-6">
+                {{form.username|as_crispy_field}}
+                {{form.first_name|as_crispy_field}}
+                {{form.last_name|as_crispy_field}}
+                {{form.email|as_crispy_field}}
+                {{form.password|as_crispy_field}}
+            </div>
+        </div>
+        <button class="btn btn-secondary">Create account</button>
+    </form>
 </div>
 {% endblock %}
