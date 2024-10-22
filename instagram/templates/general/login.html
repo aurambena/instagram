@@ -1,28 +1,20 @@
 {% extends 'general/layout.html' %}
+{% load crispy_forms_tags %}
 
 {% block head_title %}Welcome to our instagram {% endblock %}
 
 {% block page_content %}
 <div class="container">
-    <div class="row mt-2 mb-2">
-        <div class="col-sm">
-            {% for message in messages %}
-            <div class="alert
-                {% if message.tags %}
-                    {% if message.tags == 'error' %}
-                        alert-danger
-                    {% else %}
-                        alert-{{ message.tags }}
-                    {% endif %}
-                {% else %}
-                    alert-info
-                {% endif %}">
-            {{ message }}
-            </div>
-            {% endfor %}
-            </div>
+    <form action="" method="POST">
+        {% csrf_token %}
+    <div class="row">
+        <div class="col-12 col-sm-6">
+            {{form.username|as_crispy_field}}
+            {{form.password|as_crispy_field}}
         </div>
-
     </div>
+    <button class="btn btn-secondary">Sing in</button>
+    </div>
+</form>
 </div>
 {% endblock %}

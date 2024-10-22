@@ -20,11 +20,12 @@ from debug_toolbar.toolbar import debug_toolbar_urls
 from django.conf import settings
 from django.conf.urls.static import static
 from posts.views import CreatePost
-from .views import HomeView, LoginView, RegisterView, ContactView,LegalView
+from .views import HomeView, LoginView, RegisterView, ContactView,LegalView, logout_view
 
 urlpatterns = [
     path('', HomeView.as_view(), name='home'),
     path('login/', LoginView.as_view(), name='login'),
+    path('logout/', logout_view, name='logout'),
     path('register/', RegisterView.as_view(), name='register'),
     path('contact/', ContactView.as_view(), name='contact'),
     path('legal/', LegalView.as_view(), name='legal'),
