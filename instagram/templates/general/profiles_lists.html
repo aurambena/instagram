@@ -1,0 +1,28 @@
+{% extends 'general/layout.html' %}
+
+{% block head_title %}Welcome to our instagram {% endblock %}
+
+{% block page_content %}
+<div class="container">
+    <h1>Profiles</h1>
+    <div class="row">
+{% for profile in profiles %}
+      <article class="col-12 col-sm-6 col-md-4">
+        <h4>{{ profile.user.username}}</h4>
+        <p>Bio: {{profile.bio|default_if_none:"Bio not aviable"}} </p>
+        <p>Birth day: {{ profile.birth_date|default_if_none:"Birth date not aviable" }} </p>
+        <p>
+        {% if profile.profile_picture %}
+          <img src="{{ profile.profile_picture.url }}" alt="" width="100 px">
+        {% else %}
+          Picture not aviable
+        {% endif %}
+        </p>  
+          <p>Followers: {{ profile.followers.count }}</p>
+          <p><a href="{% url 'profile_detail' profile.pk %}">See Profile</a></p>
+      </article>
+      {% endfor %}
+    </div>
+    
+</div>
+{% endblock %}

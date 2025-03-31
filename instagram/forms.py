@@ -11,12 +11,16 @@ class AccountForm(forms.ModelForm):
             'last_name',
             'email',
             'password'
+
         ]
 
     def save(self):
         user = super().save(commit=True)
         user.set_password(self.cleaned_data["password"])
         user.save()
+
+        from profiles.models import UserProfile
+        UserProfile.objects.create(user=user)
 
         return user
     
@@ -25,5 +29,6 @@ class LoginForm(forms.Form):
     username = forms.CharField(max_length=140, label='username')
     password = forms.CharField( label='password', widget=forms.PasswordInput())
 
-    
-  
+class ProfileFollow(forms.Form):
+    profile_pk = forms.IntegerField(label='User Identification', widget=forms.HiddenInput())
+    # action = forms.CharField(widget=forms.HiddenInput())

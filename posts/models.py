@@ -2,11 +2,11 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class UserPost(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='posts')
-    post_image = models.ImageField(upload_to='posts/')
-    caption = models.TextField(max_length=500, blank=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    likes = models.ManyToManyField(User, related_name='post_likes')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='posts', verbose_name='user')
+    post_image = models.ImageField(upload_to='posts/', verbose_name='image')
+    caption = models.TextField(max_length=500, blank=True, verbose_name='description')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='date')
+    likes = models.ManyToManyField(User, related_name='post_likes', blank=True, verbose_name='likes')
 
     # Sets how names will appear in the admin
     class Meta:

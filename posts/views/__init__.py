@@ -1,1 +1,1 @@
-from .user_post_view import *
+from .user_post_view import CreatePost

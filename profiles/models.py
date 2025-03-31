@@ -15,9 +15,11 @@ class UserProfile(models.Model):
         verbose_name_plural = 'Profiles'
 
     def __str__(self):
-        return self.username
+        return self.user.username
     
-
+    def follow(self, profile):
+        Follow.objects.get_or_create(follower=self, following=profile)
+    
 # This model structures a follower-following unique relation and sets the date of this interaction
 class Follow(models.Model):
     follower = models.ForeignKey(UserProfile, verbose_name='¿who is following?', on_delete=models.CASCADE, related_name='follower_set')
@@ -33,5 +35,6 @@ class Follow(models.Model):
     
     # Sets how names will appear in the admin
     class Meta:
-        verbose_name = 'Folower'
+        verbose_name = 'Follower'
         verbose_name_plural = 'Followers'
+

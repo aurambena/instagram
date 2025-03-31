@@ -1,20 +1,21 @@
 {% extends 'general/layout.html' %}
 {% load crispy_forms_tags %}
 
-{% block head_title %}New Post {% endblock %}
+{% block head_title %}Welcome to our instagram {% endblock %}
 
 {% block page_content %}
 <div class="container">
-    <h1>New Post</h1>
+    <h1>Edit Profile</h1>
     <form action="" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="row">
             <div class="col-12 col-sm-6">
-                {{form.post_image|as_crispy_field}}
-                {{form.caption|as_crispy_field}}
+                {{form.bio|as_crispy_field}}
+                {{form.profile_picture|as_crispy_field}}
+                {{form.birth_date|as_crispy_field}}
             </div>
         </div>
-        <button class="btn btn-secondary">Post</button>
+        <button class="btn btn-secondary">Edit account</button>
     </form>
 </div>
 {% endblock %}

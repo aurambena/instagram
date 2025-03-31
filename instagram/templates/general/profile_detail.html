@@ -1,0 +1,66 @@
+{% extends 'general/layout.html' %}
+{% load crispy_forms_tags %}
+
+{% block head_title %}Welcome to our instagram {% endblock %}
+
+{% block page_content %}
+<div class="container">
+    <h1>Profile</h1>
+    <p>This is {{request.user.username}} profile</p>
+    <p>Bio: {{profile.bio|default_if_none:"Bio not aviable"}} </p>
+    <p>Birth day: {{ profile.birth_date|default_if_none:"Birth date not aviable" }} </p>
+    <p>
+        {% if profile.profile_picture %}
+          <img src="{{ profile.profile_pictures.url }}" alt="" width="100 px">
+        {% else %}
+          Picture not aviable
+        {% endif %}
+    </p>
+    <p>Followers: {{ profile.followers.count }}</p>
+      {% if profile.user == request.user %}
+    <p><a href="{% url 'edit_profile' profile.pk %}">Edit Profile</a></p>
+       {% endif %}
+     
+      {% if profile.user != request.user %}
+      
+        <form action="" method="post">
+          {% csrf_token %}
+          {{ form.profile_pk|as_crispy_field}}
+            {% if following %}
+              <button type="submit">Unfollow</button>
+            {% else %}
+              <button type="submit">Follow</button>
+            {% endif %}        
+          </form>
+      {% endif %}
+
+        <!-- {% if following %}
+        <form action="" method="post">
+          {% csrf_token %}
+          {{form.profile_pk|as_crispy_field}}
+          <input type="hidden" name="action" value="unfollow">
+          <p><button type="submit">Unfollow</button></p>
+        </form>
+      </p>
+        {% else %}
+          <form action="" method="post">
+              {% csrf_token %}
+              {{form.profile_pk|as_crispy_field}}
+              <input type="hidden" name="action" value="follow">
+              <p><button type="submit">Follow</button></p>
+            </form>
+          </p>
+        {% endif %} -->
+       
+    <section>
+      <h2>Posts</h2>
+      <div class="row">
+        {% for post in profile.user.posts.all %}
+        <div class="col-12 col-sm-6 col-md-4">
+            {% include '_includes/_post.html' %}
+          </div>
+          {% endfor %}
+      </div>
+    </section>
+</div>
+{% endblock %}

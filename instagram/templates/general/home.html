@@ -4,7 +4,20 @@
 
 {% block page_content %}
 <div class="container">
+    
     <h1>Home page</h1>
-    <p>This is the home content</p>
-</div>
-{% endblock %}
+    <p>Wellcome Back</p>
+
+    <section>
+      <h2>Últimas publicaciones</h2>
+  
+      <div class="row">
+        {% for post in last_posts %}
+          <div class="col-12 col-sm-6 col-md-4">
+            {% include '_includes/_post.html' %}
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+  </div>
+  {% endblock %}

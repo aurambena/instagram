@@ -6,7 +6,7 @@ from .models import UserProfile, Follow
 @admin.register(UserProfile)
 class UserProfileAdmin(admin.ModelAdmin):
     model = UserProfile
-    list_display = ('user', 'profile_picture', 'bio', 'birth_date')
+    list_display = ('user', 'profile_picture', 'bio', 'birth_date', 'pk')
 
 @admin.register(Follow)
 class FollowAdmin(admin.ModelAdmin):
