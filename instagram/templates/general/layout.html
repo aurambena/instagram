@@ -14,6 +14,76 @@
         text-decoration: none;
         color: black;
       }
+/* primary_color: #0c2b08 */
+      body{
+        background-color: #0c2b08;
+        color: #c2e42d;
+        max-width: 100%;
+        font-family: "Poppins", sans-serif;
+        .container{
+          padding: 0;
+          max-width: 90%;
+          margin: 50px;
+        }
+      }
+      header{
+        display: flex;
+        gap: 280px;
+        align-items: center;
+        margin-left: 50px;   
+      }
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 5px;
+        li{
+          display: inline-flex;
+          border-radius: 20px;
+          padding: 10px;
+          &:hover{
+          background-color:#faff00;
+          }
+          }a{
+            color: #7ca425;
+          }
+      }
+
+      #sing{
+            list-style-type: none;
+            display: flex;
+            gap: 15px;
+            margin: 0;
+            display: inline-flex;
+            border-radius: 20px;
+
+            .log{
+              border-radius: 20px;
+              padding: 10px;
+              &:hover{
+              background-color:#faff00;
+              
+                     }
+              a{
+                color: #7ca425;
+              }
+              }
+            .singup{
+                background-color:#7ca425;
+                border-radius: 10px;
+                padding: 10px;
+                &:hover{
+                background-color:#faff00;
+                     }
+                a{
+                  color: #0c2b08;
+                  
+                }
+              }
+            }
+   
+
     </style>
 </head>
 <body>
@@ -35,12 +105,12 @@
     <script>
         const likeButtons = document.querySelectorAll('.likeButton');
         console.log(likeButtons);
-        debugger
+        
         likeButtons.forEach(likeButton =>{
           let nLikesSpan = likeButton.querySelector('span');
           let nLikes = parseInt(nLikesSpan.innerHTML);
           likeButton.addEventListener('click', (event)=>{
-            debugger
+            
             event.preventDefault();
             fetch(likeButton.href)
               .then(response => response.json())

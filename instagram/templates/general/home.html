@@ -9,6 +9,7 @@
     <p>Wellcome Back</p>
 
     <section>
+      {% if request.user.is_authenticated %}
       <h2>Últimas publicaciones</h2>
   
       <div class="row">
@@ -18,6 +19,7 @@
           </div>
         {% endfor %}
       </div>
+      {% endif %}
     </section>
   </div>
   {% endblock %}

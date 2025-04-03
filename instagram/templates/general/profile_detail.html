@@ -6,7 +6,7 @@
 {% block page_content %}
 <div class="container">
     <h1>Profile</h1>
-    <p>This is {{request.user.username}} profile</p>
+    <p>This is {{profile.user}} profile</p>
     <p>Bio: {{profile.bio|default_if_none:"Bio not aviable"}} </p>
     <p>Birth day: {{ profile.birth_date|default_if_none:"Birth date not aviable" }} </p>
     <p>
