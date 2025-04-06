@@ -1,0 +1,86 @@
+
+header{
+    ul {
+      @include reset-list;
+      display: flex;
+      @include set-navbar;
+          padding: 10px;
+          padding-left: 0;
+          @include breakpoint(mobile){
+              gap: 20px;
+          }
+          @include breakpoint(tablet){
+              gap: 30px;
+          }
+          @include breakpoint(desktop){
+              gap: 30px;
+          }
+      
+      li{
+          @include set-navbar;
+          padding: 10px;
+          @include breakpoint(mobile){
+              padding: 2px;
+          }
+          @include breakpoint(tablet){
+              padding: 10px;
+          }
+          @include breakpoint(desktop){
+              padding: 10px;
+          }
+          &:hover{
+              background-color:$--tertiary-color;
+          }
+      }   a{
+              color: $--secundary-color;
+          }
+    }
+
+  #sing{
+        @include set-navbar;
+        @include reset-list;
+        display: flex;
+        gap: 15px;    
+        align-items: center;   
+        .log{
+            border-radius: 20px;
+            padding: 10px;
+            @include breakpoint(mobile){
+                padding: 2px;
+            }
+            @include breakpoint(tablet){
+                padding: 10px;
+            }
+            @include breakpoint(desktop){
+                padding: 10px;
+            }
+            &:hover{
+            background-color:$--tertiary-color;
+                   }
+            a{
+              color:$--secundary-color;
+            }
+        }
+        .singup{
+            background-color:$--secundary-color;
+            border-radius: 10px;
+            padding: 10px;
+            @include breakpoint(mobile){
+                padding: 2px;
+            }
+            @include breakpoint(tablet){
+                padding: 10px;
+            }
+            @include breakpoint(desktop){
+                padding: 10px;
+            }
+            &:hover{
+            background-color:$--tertiary-color;
+            }
+            a{
+              color: $--primary-color;
+            }
+          }
+        }
+}
+    

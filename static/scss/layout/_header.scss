@@ -1,0 +1,41 @@
+header{
+    @include breakpoint(mobile){
+        gap: 20px;
+        margin-left: 0px;
+        display: block;
+            h1{
+                font-size: 20px;
+                margin-bottom: 0;
+                margin-left: 0px;
+            }
+            .nav{
+                gap: 2px;
+            }
+    }
+    @include breakpoint(tablet){
+        gap: 70px;
+        margin-left: 0px;
+        display: block;
+            h1{
+                font-size: 40px;
+                margin-bottom: 0;
+                margin-left: 0px;
+            }
+            .nav{
+                gap: 200px;
+            }
+        }
+        @include breakpoint(desktop){
+            display: flex;
+            gap: 230px;
+            align-items: center;
+            margin-left: 50px;
+            margin-right: 50px;  
+            h1{
+                font-size: 40px;
+            } 
+            .nav{
+                gap: 100px; 
+            }
+        }
+}

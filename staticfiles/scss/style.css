@@ -14,26 +14,60 @@ body {
   max-width: 90%;
   margin: 50px; }
 
-header {
-  display: flex;
-  gap: 280px;
-  align-items: center;
-  margin-left: 50px; }
-  @media (min-width: 375px) {
-    header {
-      gap: 20px;
-      margin-left: 0px;
-      display: block; }
-      header h1 {
-        font-size: 20px;
-        margin-bottom: 0;
-        text-align: center; } }
+@media (min-width: 375px) {
+  header {
+    gap: 20px;
+    margin-left: 0px;
+    display: block; }
+    header h1 {
+      font-size: 20px;
+      margin-bottom: 0;
+      margin-left: 0px; }
+    header .nav {
+      gap: 2px; } }
+
+@media (min-width: 768px) {
+  header {
+    gap: 70px;
+    margin-left: 0px;
+    display: block; }
+    header h1 {
+      font-size: 40px;
+      margin-bottom: 0;
+      margin-left: 0px; }
+    header .nav {
+      gap: 200px; } }
+
+@media (min-width: 1200px) {
+  header {
+    display: flex;
+    gap: 230px;
+    align-items: center;
+    margin-left: 50px;
+    margin-right: 50px; }
+    header h1 {
+      font-size: 40px; }
+    header .nav {
+      gap: 100px; } }
+
 header ul {
   margin: 0;
   padding: 0;
   list-style: none;
   display: flex;
-  gap: 5px; }
+  display: inline-flex;
+  border-radius: 20px;
+  padding: 10px;
+  padding-left: 0; }
+  @media (min-width: 375px) {
+    header ul {
+      gap: 20px; } }
+  @media (min-width: 768px) {
+    header ul {
+      gap: 30px; } }
+  @media (min-width: 1200px) {
+    header ul {
+      gap: 30px; } }
   header ul li {
     display: inline-flex;
     border-radius: 20px;
@@ -41,6 +75,12 @@ header ul {
     @media (min-width: 375px) {
       header ul li {
         padding: 2px; } }
+    @media (min-width: 768px) {
+      header ul li {
+        padding: 10px; } }
+    @media (min-width: 1200px) {
+      header ul li {
+        padding: 10px; } }
     header ul li:hover {
       background-color: #faff00; }
   header ul a {
@@ -61,6 +101,12 @@ header #sing {
     @media (min-width: 375px) {
       header #sing .log {
         padding: 2px; } }
+    @media (min-width: 768px) {
+      header #sing .log {
+        padding: 10px; } }
+    @media (min-width: 1200px) {
+      header #sing .log {
+        padding: 10px; } }
     header #sing .log:hover {
       background-color: #faff00; }
     header #sing .log a {
@@ -72,6 +118,12 @@ header #sing {
     @media (min-width: 375px) {
       header #sing .singup {
         padding: 2px; } }
+    @media (min-width: 768px) {
+      header #sing .singup {
+        padding: 10px; } }
+    @media (min-width: 1200px) {
+      header #sing .singup {
+        padding: 10px; } }
     header #sing .singup:hover {
       background-color: #faff00; }
     header #sing .singup a {
