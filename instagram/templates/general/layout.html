@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,83 +9,9 @@
     rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
     crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
-    <style>
-      .likeButton{
-        text-decoration: none;
-        color: black;
-      }
-/* primary_color: #0c2b08 */
-      body{
-        background-color: #0c2b08;
-        color: #c2e42d;
-        max-width: 100%;
-        font-family: "Poppins", sans-serif;
-        .container{
-          padding: 0;
-          max-width: 90%;
-          margin: 50px;
-        }
-      }
-      header{
-        display: flex;
-        gap: 280px;
-        align-items: center;
-        margin-left: 50px;   
-      }
-      ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        gap: 5px;
-        li{
-          display: inline-flex;
-          border-radius: 20px;
-          padding: 10px;
-          &:hover{
-          background-color:#faff00;
-          }
-          }a{
-            color: #7ca425;
-          }
-      }
-
-      #sing{
-            list-style-type: none;
-            display: flex;
-            gap: 15px;
-            margin: 0;
-            display: inline-flex;
-            border-radius: 20px;
-
-            .log{
-              border-radius: 20px;
-              padding: 10px;
-              &:hover{
-              background-color:#faff00;
-              
-                     }
-              a{
-                color: #7ca425;
-              }
-              }
-            .singup{
-                background-color:#7ca425;
-                border-radius: 10px;
-                padding: 10px;
-                &:hover{
-                background-color:#faff00;
-                     }
-                a{
-                  color: #0c2b08;
-                  
-                }
-              }
-            }
-   
-
-    </style>
+    <title>SCSS</title>
+    {% load sass_tags %}
+    <link rel="stylesheet" href="{% sass_src 'css/style.scss' %}">
 </head>
 <body>
     <div class="container">
@@ -102,6 +29,7 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
     crossorigin="anonymous"></script>
 
+    
     <script>
         const likeButtons = document.querySelectorAll('.likeButton');
         console.log(likeButtons);
@@ -126,5 +54,6 @@
               });
         })
       </script>
+
 </body>
 </html>

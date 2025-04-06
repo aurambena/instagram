@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'profiles',
     'posts',
     'notifications',
+
+    'sass_processor',
 ]
 
 MIDDLEWARE = [
@@ -139,3 +141,25 @@ CRISPY_TEMPLATE_PACK = 'bootstrap5'
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
 
 LOGIN_URL=reverse_lazy('login')
+
+#SCSS
+
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [BASE_DIR / "static"]
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+# SCSS settings
+SASS_PROCESSOR_ENABLED = True
+SASS_PROCESSOR_ROOT = BASE_DIR / "static"
+
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'sass_processor.finders.CssFinder',  # This is important
+]

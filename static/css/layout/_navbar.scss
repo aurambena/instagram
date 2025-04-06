@@ -1,0 +1,63 @@
+
+header{
+  ul {
+    @include reset-list;
+    display: flex;
+    gap: 5px;
+    li{
+      @include set-navbar;
+      padding: 10px;
+      @include breakpoint(mobile){
+        padding: 2px;
+      }
+      &:hover{
+      background-color:$--tertiary-color;
+      }
+    }  a{
+        color: $--secundary-color;
+      }
+}
+
+  #sing{
+        @include set-navbar;
+        @include reset-list;
+        display: flex;
+        gap: 15px;    
+        align-items: center;   
+        @include breakpoint(mobile){
+          // margin-left: 230px;
+          
+        }
+        .log{
+          border-radius: 20px;
+          padding: 10px;
+          @include breakpoint(mobile){
+            padding: 2px;
+            text-align: right;
+            
+          }
+          &:hover{
+          background-color:$--tertiary-color;
+                 }
+          a{
+            color:$--secundary-color;
+          }
+        }
+        .singup{
+            background-color:$--secundary-color;
+            border-radius: 10px;
+            padding: 10px;
+            @include breakpoint(mobile){
+              padding: 2px;
+              
+            }
+            &:hover{
+            background-color:$--tertiary-color;
+            }
+            a{
+              color: $--primary-color;
+            }
+          }
+        }
+    }
+    
