@@ -5,13 +5,21 @@
 {% block page_content %}
 <div class="container">
     
-    <h1>Home page</h1>
-    <p>Wellcome Back</p>
+    <h1>Share your pictures and save your moments!!</h1>
+    
+    <section class="collage"> 
+      <p>
+        <img src="https://picsum.photos/200/300?random=1" alt="Home">
+        <img src="https://picsum.photos/200/300?random=2" alt="Home">
+        <img src="https://picsum.photos/200/300?random=3" alt="Home">
+      </p>
+      
+    </section>
 
     <section>
       {% if request.user.is_authenticated %}
+      <p>Wellcome {{ profile.user }}</p>
       <h2>Últimas publicaciones</h2>
-  
       <div class="row">
         {% for post in last_posts %}
           <div class="col-12 col-sm-6 col-md-4">

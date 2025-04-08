@@ -1,0 +1,100 @@
+h1{
+    @include breakpoint(mobile){
+        text-align: left;
+        font-size: 20px;
+    }
+    @include breakpoint(tablet){
+        font-size: 40px;
+        text-align: center;
+    }
+    @include breakpoint(desktop){
+        font-size: 40px;
+        text-align: center;
+    }
+}
+.collage{
+    @include breakpoint(mobile){
+        margin-left: 0px;
+        margin-top: 30px;
+        img:first-child{
+            transform: rotate(20deg);
+            margin: 10px;
+            border-color: white;
+            border-width: 5px;
+            border-style: dashed;
+            width: 80px;
+        }
+        img:nth-child(2){
+            transform: rotate(-20deg);
+            margin: 10px;
+            border-color: white;
+            border-width: 5px;
+            border-style: solid;
+            width: 80px;
+        }
+        img:nth-child(3){
+            transform: rotate(20deg);
+            margin: 10px;
+            border-color: white;
+            border-width: 5px;
+            border-style: dotted;
+            width: 80px;
+        }
+    }
+    @include breakpoint(tablet){
+        margin-left: 80px;
+        margin-top: 30px;
+        img:first-child{
+            transform: rotate(20deg);
+            margin: 20px;
+            border-color: white;
+            border-width: 5px;
+            border-style: dashed;
+            width:120px;
+        }
+        img:nth-child(2){
+            transform: rotate(-20deg);
+            margin: 20px;
+            border-color: white;
+            border-width: 5px;
+            border-style: solid;
+            width:120px;
+        }
+        img:nth-child(3){
+            transform: rotate(20deg);
+            margin: 20px;
+            border-color: white;
+            border-width: 5px;
+            border-style: dotted;
+            width:120px;
+        }
+    }
+    @include breakpoint(desktop){
+        margin-left: 180px;
+        margin-top: 30px;
+        img:first-child{
+            transform: rotate(20deg);
+            margin: 20px;
+            border-color: white;
+            border-width: 5px;
+            border-style: dashed;
+            width:200px;
+        }
+        img:nth-child(2){
+            transform: rotate(-20deg);
+            margin: 20px;
+            border-color: white;
+            border-width: 5px;
+            border-style: solid;
+            width:200px;
+        }
+        img:nth-child(3){
+            transform: rotate(20deg);
+            margin: 20px;
+            border-color: white;
+            border-width: 5px;
+            border-style: dotted;
+            width:200px;
+        }
+    }
+}

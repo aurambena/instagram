@@ -3,11 +3,12 @@
     <section class="nav">
     <nav >
         <ul id="menu">
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'list_profiles' %}">Profiles</a></li>
+            <li><a href="{% url 'home' %}"><img src="/icons/home2.svg" alt="home">
+                Home</a></li>
+            <li><a href="{% url 'list_profiles' %}"><img src="/icons/groups2.svg" alt="">Profiles</a></li>
             {% if request.user.is_authenticated %}
-            <li><a href="{% url 'profile_detail' request.user.profile.pk %}">My Profile</a></li>
-            <li><a href="{% url 'create_post' %}">Create Post</a></li>
+            <li><a href="{% url 'profile_detail' request.user.profile.pk %}"><img src="/icons/person2.svg" alt="">My Profile</a></li>
+            <li><a href="{% url 'create_post' %}"><img src="/icons/post2.svg" alt="">Create Post</a></li>
             {% endif %}
         </ul>
     </nav>
@@ -17,7 +18,7 @@
             {% endif %}
             
         {% if not request.user.is_authenticated %}
-        <li class="log"><a href="{% url 'login' %}">Login</a></li>
+        <li class="log"><a href="{% url 'login' %}"><img src="/icons/login2.svg" alt="login">Login</a></li>
             <li class="singup"><a href="{% url 'register' %}">Sing up</a></li>
         {% endif%}
     </aside>
