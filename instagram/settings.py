@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 from django.urls import reverse_lazy
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -130,7 +131,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+# STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
@@ -145,7 +146,6 @@ LOGIN_URL=reverse_lazy('login')
 #SCSS
 
 from pathlib import Path
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 STATIC_URL = '/static/'
@@ -153,6 +153,17 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
+
+# Default primary key field type
+# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
+
+LOGIN_URL = reverse_lazy('login')
+
 
 # SCSS settings
 SASS_PROCESSOR_ENABLED = True
