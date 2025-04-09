@@ -35,15 +35,18 @@
   list-style: none;
 }
 
+@mixin reset-button{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 @mixin set-navbar{
   display: inline-flex;
   border-radius: 20px;
 }
 
 @mixin likebutton{
-  color: $--primary-color;  
+  list-style: none;
   text-decoration: none;
-  &:hover{
-    background-color: $--tertiary-color;
-  }
 }

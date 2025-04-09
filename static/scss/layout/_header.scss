@@ -3,10 +3,10 @@ header{
         gap: 20px;
         margin-left: 0px;
         display: block;
-            h1{
+            .h1home{
                 font-size: 20px;
                 margin-bottom: 0;
-                margin-left: 0px;
+                margin-left: 10px;
             }
             .nav{
                 gap: 2px;
@@ -16,7 +16,7 @@ header{
         gap: 70px;
         margin-left: 0px;
         display: block;
-            h1{
+            .h1home{
                 font-size: 40px;
                 margin-bottom: 0;
                 margin-left: 0px;
@@ -27,11 +27,11 @@ header{
         }
         @include breakpoint(desktop){
             display: flex;
-            gap: 230px;
+            gap: 180px;
             align-items: center;
             margin-left: 50px;
             margin-right: 50px;  
-            h1{
+            .h1home{
                 font-size: 40px;
             } 
             .nav{

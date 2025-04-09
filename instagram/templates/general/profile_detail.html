@@ -4,21 +4,22 @@
 {% block head_title %}Welcome to our instagram {% endblock %}
 
 {% block page_content %}
-<div class="container">
-    <h1>Profile</h1>
-    <p>This is {{profile.user}} profile</p>
+<div class="profile-container">
+  <section class="section-profile">
+    <h1>This is {{profile.user}} profile</h1>
+    <p>
+      {% if profile.profile_picture %}
+        <img src="{{ profile.profile_pictures.url }}" alt="" width="100 px">
+      {% else %}
+        <p>Picture not aviable</p>
+      {% endif %}
+  </p>
     <p>Bio: {{profile.bio|default_if_none:"Bio not aviable"}} </p>
     <p>Birth day: {{ profile.birth_date|default_if_none:"Birth date not aviable" }} </p>
-    <p>
-        {% if profile.profile_picture %}
-          <img src="{{ profile.profile_pictures.url }}" alt="" width="100 px">
-        {% else %}
-          Picture not aviable
-        {% endif %}
-    </p>
+    
     <p>Followers: {{ profile.followers.count }}</p>
       {% if profile.user == request.user %}
-    <p><a href="{% url 'edit_profile' profile.pk %}">Edit Profile</a></p>
+    <p><a class="edit-profile" href="{% url 'edit_profile' profile.pk %}">Edit Profile</a></p>
        {% endif %}
      
       {% if profile.user != request.user %}
@@ -33,6 +34,7 @@
             {% endif %}        
           </form>
       {% endif %}
+    </section>
 
         <!-- {% if following %}
         <form action="" method="post">
@@ -53,7 +55,7 @@
         {% endif %} -->
        
     <section>
-      <h2>Posts</h2>
+      <h2 class="h2profile">Posts</h2>
       <div class="row">
         {% for post in profile.user.posts.all %}
         <div class="col-12 col-sm-6 col-md-4">

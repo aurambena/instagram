@@ -4,16 +4,32 @@
 /*font-size mobile*/
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap");
 body {
-  background-color: #0c2b08;
+  background-color: red;
   color: #c2e42d;
   max-width: 100%;
   font-family: "Poppins", sans-serif;
 }
 
-.container {
-  padding: 0;
-  max-width: 90%;
-  margin: 50px;
+@media (min-width: 375px) {
+  .container {
+    padding: 0;
+    max-width: 90%;
+    margin: 10px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    padding: 0;
+    max-width: 90%;
+    margin: 40px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    padding: 0;
+    max-width: 90%;
+    margin: 50px;
+  }
 }
 
 @media (min-width: 375px) {
@@ -67,6 +83,7 @@ header ul {
   padding: 0;
   list-style: none;
   display: flex;
+  align-items: center;
   display: inline-flex;
   border-radius: 20px;
   padding: 10px;
@@ -74,23 +91,22 @@ header ul {
 }
 @media (min-width: 375px) {
   header ul {
-    gap: 20px;
+    gap: 0px;
   }
 }
 @media (min-width: 768px) {
   header ul {
-    gap: 30px;
+    gap: 0px;
   }
 }
 @media (min-width: 1200px) {
   header ul {
-    gap: 30px;
+    gap: 0px;
   }
 }
 header ul li {
   display: inline-flex;
   border-radius: 20px;
-  padding: 10px;
 }
 @media (min-width: 375px) {
   header ul li {
@@ -99,19 +115,21 @@ header ul li {
 }
 @media (min-width: 768px) {
   header ul li {
-    padding: 10px;
+    padding: 5px;
   }
 }
 @media (min-width: 1200px) {
   header ul li {
-    padding: 10px;
+    padding: 5px;
   }
-}
-header ul li:hover {
-  background-color: #faff00;
 }
 header ul a {
   color: #c2e42d;
+  padding: 10px;
+  border-radius: 20px;
+}
+header ul a:hover {
+  background-color: #faff00;
 }
 header #sing {
   display: inline-flex;
@@ -123,10 +141,6 @@ header #sing {
   gap: 15px;
   align-items: center;
 }
-header #sing .log {
-  border-radius: 20px;
-  padding: 10px;
-}
 @media (min-width: 375px) {
   header #sing .log {
     padding: 2px;
@@ -142,16 +156,17 @@ header #sing .log {
     padding: 10px;
   }
 }
-header #sing .log:hover {
-  background-color: #faff00;
-}
 header #sing .log a {
   color: #c2e42d;
+  border-radius: 20px;
+  padding: 10px;
+}
+header #sing .log a:hover {
+  background-color: #faff00;
 }
 header #sing .singup {
   background-color: #c2e42d;
   border-radius: 10px;
-  padding: 10px;
 }
 @media (min-width: 375px) {
   header #sing .singup {
@@ -175,9 +190,130 @@ header #sing .singup a {
   color: #0c2b08;
 }
 
-.collage p img {
-  gap: 10px;
-  background-color: red;
+@media (min-width: 375px) {
+  h1 {
+    text-align: left;
+    font-size: 20px;
+  }
+}
+@media (min-width: 768px) {
+  h1 {
+    font-size: 40px;
+    text-align: center;
+  }
+}
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 40px;
+    text-align: center;
+  }
+}
+
+@media (min-width: 375px) {
+  .collage {
+    margin-left: 0px;
+    margin-top: 30px;
+  }
+  .collage img:first-child {
+    transform: rotate(20deg);
+    margin: 10px;
+    border-color: white;
+    border-width: 5px;
+    border-style: dashed;
+    width: 80px;
+  }
+  .collage img:nth-child(2) {
+    transform: rotate(-20deg);
+    margin: 10px;
+    border-color: white;
+    border-width: 5px;
+    border-style: solid;
+    width: 80px;
+  }
+  .collage img:nth-child(3) {
+    transform: rotate(20deg);
+    margin: 10px;
+    border-color: white;
+    border-width: 5px;
+    border-style: dotted;
+    width: 80px;
+  }
+}
+@media (min-width: 768px) {
+  .collage {
+    margin-left: 80px;
+    margin-top: 30px;
+  }
+  .collage img:first-child {
+    transform: rotate(20deg);
+    margin: 20px;
+    border-color: white;
+    border-width: 5px;
+    border-style: dashed;
+    width: 120px;
+  }
+  .collage img:nth-child(2) {
+    transform: rotate(-20deg);
+    margin: 20px;
+    border-color: white;
+    border-width: 5px;
+    border-style: solid;
+    width: 120px;
+  }
+  .collage img:nth-child(3) {
+    transform: rotate(20deg);
+    margin: 20px;
+    border-color: white;
+    border-width: 5px;
+    border-style: dotted;
+    width: 120px;
+  }
+}
+@media (min-width: 1200px) {
+  .collage {
+    margin-left: 180px;
+    margin-top: 30px;
+  }
+  .collage img:first-child {
+    transform: rotate(20deg);
+    margin: 20px;
+    border-color: white;
+    border-width: 5px;
+    border-style: dashed;
+    width: 200px;
+  }
+  .collage img:nth-child(2) {
+    transform: rotate(-20deg);
+    margin: 20px;
+    border-color: white;
+    border-width: 5px;
+    border-style: solid;
+    width: 200px;
+  }
+  .collage img:nth-child(3) {
+    transform: rotate(20deg);
+    margin: 20px;
+    border-color: white;
+    border-width: 5px;
+    border-style: dotted;
+    width: 200px;
+  }
+}
+
+@media (min-width: 375px) {
+  footer.container {
+    margin-left: 0px;
+  }
+}
+@media (min-width: 768px) {
+  footer.container {
+    margin-left: 0px;
+  }
+}
+@media (min-width: 1200px) {
+  footer.container {
+    margin-left: 0px;
+  }
 }
 
 * {
