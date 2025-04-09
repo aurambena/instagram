@@ -1,0 +1,14 @@
+// footer{
+//     margin-left: 50px;
+// }
+div.container-footer{
+    @include breakpoint(mobile){
+        margin-left: 10px;
+    }
+    @include breakpoint(tablet){
+        margin-left: 20px;
+    }
+    @include breakpoint(desktop){
+        margin-left: 50px;
+    }
+}

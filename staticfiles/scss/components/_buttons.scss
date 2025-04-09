@@ -1,0 +1,23 @@
+.likeButton{
+    @include likebutton;
+    a{
+      color: $--primary-color;
+    }
+  }
+
+//   a.bi bi-suit-heart-fill{
+    
+    
+// }
+
+  .postbutton{
+    @include reset-button;
+    color: $--primary-color;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: $--secundary-color;
+    text-align:right;
+    &:hover{
+        background-color:$--tertiary-color;
+    }
+}

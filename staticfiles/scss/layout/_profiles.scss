@@ -1,0 +1,56 @@
+.h1profiles{
+    text-align: center;
+    margin-bottom: 40px;
+    background-color: $--secundary-color;
+    color: $--primary-color;
+        
+}
+
+.rowprofiles{
+    @include breakpoint(mobile){
+        display: grid;
+        grid-template-columns: 100%;
+        gap: 10px;
+    }
+    @include breakpoint(tablet){
+        display: grid;
+        grid-template-columns: 50% 50%;
+        gap: 10px;
+    }
+    @include breakpoint(desktop){
+        display: grid;
+        grid-template-columns: 50% 50%;
+        gap: 10px;
+    }
+    article{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        border-color: $--secundary-color;
+        border-style: solid;
+        
+        @include breakpoint(mobile){
+            font-size: 10px;
+            padding: 10px;
+        }
+        @include breakpoint(tablet){
+            font-size: 15px;
+            padding: 20px;
+        }
+        @include breakpoint(desktop){
+            font-size: 20px;
+            padding: 20px;
+        }
+    }
+}
+
+.profile-button{
+    @include reset-button;
+    color: $--primary-color;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: $--secundary-color;
+    &:hover{
+        background-color:$--tertiary-color;
+        }
+
+}

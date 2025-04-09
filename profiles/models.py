@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-# This model structures a profile that is attached to the normal user and what the user will have
+# This model structures a profile that is attached to the normal user and what thle user will have
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
     profile_picture = models.ImageField(upload_to='profile_pictures/', blank=True, null=True)

@@ -1,0 +1,96 @@
+
+header{
+    ul {
+      @include reset-list;
+      display: flex;
+      align-items: center;
+      @include set-navbar;
+          padding: 10px;
+          padding-left: 0;
+          @include breakpoint(mobile){
+              gap: 0px;
+          }
+          @include breakpoint(tablet){
+              gap: 0px;
+          }
+          @include breakpoint(desktop){
+              gap: 0px;
+          }
+      
+      li{
+          @include set-navbar;
+          @include breakpoint(mobile){
+              padding: 2px;
+          }
+          @include breakpoint(tablet){
+              padding: 5px;
+          }
+          @include breakpoint(desktop){
+              padding: 5px;
+          }
+        }   a{
+              color: $--secundary-color;
+              padding: 10px;
+              border-radius: 20px;
+              &:hover{
+                background-color:$--tertiary-color;
+            }
+            
+          }
+          
+          
+    }
+    
+
+  #sing{
+        @include set-navbar;
+        @include reset-list;
+        display: flex;
+        gap: 15px;    
+        align-items: center;   
+        .log{
+            
+            @include breakpoint(mobile){
+                padding: 2px;
+            }
+            @include breakpoint(tablet){
+                padding: 10px;
+            }
+            @include breakpoint(desktop){
+                padding: 10px;
+            }
+            
+            a{
+              color:$--secundary-color;
+              border-radius: 20px;
+              padding: 10px;
+              &:hover{
+                background-color:$--tertiary-color;
+                       }
+            }
+        }
+        .singup{
+            background-color:$--secundary-color;
+            border-radius: 10px;
+            @include breakpoint(mobile){
+                padding: 2px;
+            }
+            @include breakpoint(tablet){
+                padding: 10px;
+            }
+            @include breakpoint(desktop){
+                padding: 10px;
+            }
+            &:hover{
+                background-color:$--tertiary-color;
+                }
+            
+            a{
+              color: $--primary-color;
+              
+              
+            }
+          }
+        }
+}
+    

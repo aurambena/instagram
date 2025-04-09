@@ -1,0 +1,17 @@
+.container{
+    @include breakpoint(mobile){
+        padding: 0;
+        max-width: 90%;
+        margin: 10px;
+    }
+    @include breakpoint(tablet){
+        padding: 0;
+        max-width: 90%;
+        margin: 40px;
+    }
+    @include breakpoint(desktop){
+        padding: 0;
+        max-width: 90%;
+        margin: 50px;
+    }
+}

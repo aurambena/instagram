@@ -1,0 +1,14 @@
+span.material-symbols-outlined{
+    @include breakpoint(mobile){
+        font-size: 15px;
+    }
+    @include breakpoint(tablet){
+        font-size: 25px;
+    }
+    @include breakpoint(desktop){
+        font-size: 35px;
+    }
+}
+
+
+

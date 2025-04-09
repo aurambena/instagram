@@ -1,0 +1,16 @@
+form.login{
+    
+    @include breakpoint(mobile){
+        margin-top: 20px;
+    }
+    @include breakpoint(tablet){
+        margin-top: 30px;
+    }
+    @include breakpoint(desktop){
+        margin-top: 60px;
+    }
+}
+
+h1.h1login{
+    text-align: center;
+}

@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'notifications',
 
     'sass_processor',
+    'compressor',
 ]
 
 MIDDLEWARE = [
@@ -145,14 +146,20 @@ LOGIN_URL=reverse_lazy('login')
 
 #SCSS
 
-from pathlib import Path
-BASE_DIR = Path(__file__).resolve().parent.parent
+# djangotemplates/djangotemplates/settings.py
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [BASE_DIR / "static"]
+# Add these new lines
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
@@ -167,10 +174,13 @@ LOGIN_URL = reverse_lazy('login')
 
 # SCSS settings
 SASS_PROCESSOR_ENABLED = True
-SASS_PROCESSOR_ROOT = BASE_DIR / "static"
+SASS_PROCESSOR_ROOT = STATIC_ROOT
+
 
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'sass_processor.finders.CssFinder',  # This is important
+    'compressor.finders.CompressorFinder',
+
 ]
